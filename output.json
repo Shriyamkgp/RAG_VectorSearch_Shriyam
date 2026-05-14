@@ -1,0 +1,41 @@
+[
+  {
+    "Input Query": "How does the system cope with a sudden traffic surge?",
+    "Strategy A (Raw)": [
+      "Horizontal auto-scaling is triggered when CPU utilization exceeds 70%, automatically provisioning additional compute nodes to distribute traffic load.",
+      "Health-check probes run every 10 seconds; instances failing three consecutive checks are automatically removed from the load-balancer pool and replaced.",
+      "Elastic Load Balancing routes incoming requests across healthy instances using a round-robin algorithm, preventing any single node from becoming a bottleneck."
+    ],
+    "Strategy B (Enhanced)": [
+      "The caching layer employs Redis with a write-through strategy, reducing database read pressure by up to 85% during high-concurrency traffic spikes.",
+      "Horizontal auto-scaling is triggered when CPU utilization exceeds 70%, automatically provisioning additional compute nodes to distribute traffic load.",
+      "Elastic Load Balancing routes incoming requests across healthy instances using a round-robin algorithm, preventing any single node from becoming a bottleneck."
+    ]
+  },
+  {
+    "Input Query": "What mechanisms are in place to protect sensitive information?",
+    "Strategy A (Raw)": [
+      "All data persisted to disk is encrypted using AES-256-GCM, with keys rotated every 90 days via an automated key-management service.",
+      "Inter-service communication is secured through mutual TLS (mTLS) 1.3, ensuring both client and server identities are verified on every request.",
+      "Role-based access control (RBAC) enforces the principle of least privilege, restricting API endpoint access to authenticated and authorized service accounts only."
+    ],
+    "Strategy B (Enhanced)": [
+      "Role-based access control (RBAC) enforces the principle of least privilege, restricting API endpoint access to authenticated and authorized service accounts only.",
+      "All data persisted to disk is encrypted using AES-256-GCM, with keys rotated every 90 days via an automated key-management service.",
+      "Inter-service communication is secured through mutual TLS (mTLS) 1.3, ensuring both client and server identities are verified on every request."
+    ]
+  },
+  {
+    "Input Query": "How is the system kept running if something goes wrong?",
+    "Strategy A (Raw)": [
+      "Health-check probes run every 10 seconds; instances failing three consecutive checks are automatically removed from the load-balancer pool and replaced.",
+      "Active-passive failover is configured across two geographically separated data centers, with DNS-based routing switching traffic within 30 seconds of a primary failure.",
+      "The CI/CD pipeline uses blue-green deployments to achieve zero-downtime releases, with automated rollback triggered by a spike in the 5xx error rate."
+    ],
+    "Strategy B (Enhanced)": [
+      "Health-check probes run every 10 seconds; instances failing three consecutive checks are automatically removed from the load-balancer pool and replaced.",
+      "Active-passive failover is configured across two geographically separated data centers, with DNS-based routing switching traffic within 30 seconds of a primary failure.",
+      "Elastic Load Balancing routes incoming requests across healthy instances using a round-robin algorithm, preventing any single node from becoming a bottleneck."
+    ]
+  }
+]
