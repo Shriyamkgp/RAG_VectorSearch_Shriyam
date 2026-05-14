@@ -5,8 +5,8 @@
 This benchmark compares two RAG retrieval strategies across three abstract queries
 on a 10-document technical corpus:
 
-- **Strategy A** — Raw cosine similarity on the original query embedding.
-- **Strategy B** — AI-enhanced retrieval using query expansion, where the query is
+- **Strategy A** - Raw cosine similarity on the original query embedding.
+- **Strategy B** - AI-enhanced retrieval using query expansion, where the query is
   first enriched with technical synonyms before embedding.
 
 ---
@@ -21,7 +21,7 @@ on a 10-document technical corpus:
 | 2    | Health-check probes                 | Horizontal auto-scaling (CPU > 70%)                 |
 | 3    | Elastic Load Balancing              | Elastic Load Balancing                              |
 
-**Observation:** Strategy A missed the Redis caching chunk entirely — a critical
+**Observation:** Strategy A missed the Redis caching chunk entirely a critical
 component of traffic surge handling. Strategy B's expansion (`high-concurrency`,
 `traffic spike`, `Redis cache`) pulled it in as the top result.
 
@@ -40,7 +40,7 @@ component of traffic surge handling. Strategy B's expansion (`high-concurrency`,
 | 3    | RBAC / least privilege | mTLS 1.3                   |
 
 **Observation:** Both strategies retrieve the same three chunks, but Strategy B
-re-ranks them — surfacing RBAC (access control) first, which is arguably the
+re-ranks them surfacing RBAC (access control) first, which is arguably the
 most direct answer to "protecting sensitive information" from an access perspective.
 
 <!-- Insert output screenshot here -->
@@ -57,7 +57,7 @@ most direct answer to "protecting sensitive information" from an access perspect
 | 2    | Active-passive failover                 | Active-passive failover               |
 | 3    | **CI/CD blue-green deployment (noise)** | **Elastic Load Balancing (relevant)** |
 
-**Observation:** Strategy A retrieved the CI/CD pipeline chunk — a noise paragraph
+**Observation:** Strategy A retrieved the CI/CD pipeline chunk a noise paragraph
 unrelated to fault tolerance. Strategy B's expansion (`failover`, `high availability`,
 `disaster recovery`) correctly displaced it with the Load Balancing chunk.
 

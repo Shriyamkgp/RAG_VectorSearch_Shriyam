@@ -1,4 +1,3 @@
-```markdown
 # RAG Retrieval Benchmark: Cosine Similarity vs. Query Expansion
 
 A local Retrieval-Augmented Generation (RAG) pipeline that benchmarks two retrieval
@@ -25,6 +24,7 @@ fails. This project demonstrates that gap and how query expansion bridges it.
 ---
 
 ## Project Structure
+
 ```
 
 ├── main.py # Benchmark entry point
@@ -40,7 +40,7 @@ fails. This project demonstrates that gap and how query expansion bridges it.
 ├── output.json # Benchmark results
 └── requirements.txt
 
-````
+```
 
 ---
 
@@ -55,7 +55,7 @@ python main.py
 
 # Run tests
 pytest test/test_pipeline.py -v
-````
+```
 
 ---
 
@@ -75,9 +75,5 @@ side-by-side output analysis.
 ## Production Path
 
 This pipeline uses GTR-T5-Large and FAISS as local proxies for Vertex AI
-Text Embedding API and Vertex AI Vector Search (Matching Engine). See
+Text Embedding API and Vertex AI Vector Search. See
 [`docs/technical_design.md`](docs/technical_design.md) for the migration plan.
-
-```
-
-```
