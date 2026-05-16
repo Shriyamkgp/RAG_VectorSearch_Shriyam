@@ -18,7 +18,7 @@ fails. This project demonstrates that gap and how query expansion bridges it.
 
 | Strategy | Method                | Description                                                |
 | -------- | --------------------- | ---------------------------------------------------------- |
-| **A**    | Raw Vector Search     | Embeds the query as-is and retrieves via cosine similarity |
+| **A**    | Raw Vector Search     | Embeds the query as it is and retrieves via cosine similarity |
 | **B**    | AI-Enhanced Retrieval | Expands the query with technical synonyms before embedding |
 
 ---
